@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Резюме — Шероченков Роман Артурович</title>
+  <!-- Подключаем Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    :root{--blue:#0b63a8;--light:#ffffff;--text:#1b2430}
+    *{box-sizing:border-box}
+    body{
+      font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin:0;
+      background:linear-gradient(120deg, #fdfdfd 0%, #f5f7fa 100%);
+      color:var(--text);
+    }
+
+    .container{
+      max-width:1100px;
+      margin:36px auto;
+      background:white;
+      border-radius:14px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      box-shadow:0 10px 30px rgba(11,99,168,0.12)
+    }
+    .sidebar{
+      background:linear-gradient(180deg,var(--blue),#0f74bf);
+      padding:32px;
+      color:white;
+      display:flex;
+      flex-direction:column;
+      gap:22px
+    }
+    .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.12);align-self:center}
+    .name{font-size:20px;font-weight:700;text-align:center;margin-top:6px}
+    
+    /* Новый стиль цитаты */
+    .quote{
+      position:relative;
+      font-size:15px;
+      line-height:1.6;
+      background:rgba(255,255,255,0.15);
+      padding:22px;
+      border-radius:12px;
+      font-style:italic;
+    }
+    .quote::before{
+      content:"“";
+      font-size:42px;
+      position:absolute;
+      top:-12px;
+      left:12px;
+      opacity:0.5;
+    }
+    .quote::after{
+      content:"”";
+      font-size:42px;
+      position:absolute;
+      bottom:-22px;
+      right:12px;
+      opacity:0.5;
+    }
+
+    .section-title{
+      background:var(--blue);
+      color:white;
+      padding:10px 14px;
+      border-radius:6px;
+      font-weight:700;
+      margin-bottom:6px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .content{padding:32px}
+    .card{background:white;padding:14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);margin-bottom:18px}
+    
+    /* Унифицированный стиль для всех текстовых пунктов */
+    .field,
+    .card p {
+      font-size:15px;
+      color:var(--text);
+      margin:8px 0 0 0;
+      line-height:1.45;
+    }
+
+    h2{margin:0 0 12px 0;font-size:18px}
+    .label{font-weight:700;color:#34495e}
+    .value{margin-left:6px}
+    .education, .work{margin-top:12px}
+
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr;max-width:760px}
+      .sidebar{flex-direction:row;align-items:center;gap:12px;padding:18px}
+      .photo{width:84px;height:84px}
+      .content{padding:18px}
+      .quote{font-size:14px;padding:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <div class="photo">
+          <img src="photo.png" alt="Фото" style="width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        <div class="name">Шероченков<br>Роман Артурович</div>
+      </div>
+
+      <div class="quote">
+        Я имею практический опыт разработки и внедрения цифровых решений для промышленности и городских инфраструктур.  
+
+        Моя цель — разрабатывать и внедрять IT-решения на стыке промышленности, городской инфраструктуры и искусственного интеллекта, создавая проекты, которые приносят пользу бизнесу и обществу.
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="card">
+        <div class="section-title"><i class="fas fa-id-card"></i>Основная информация</div>
+        <div class="field"><span class="label">Должность:</span><span class="value"> студент РТУ МИРЭА (09.03.01, 1 курс)</span></div>
+        <div class="field"><span class="label">Желаемая зарплата:</span><span class="value"> 38 000 р/мес или 4 000 р/проект</span></div>
+        <div class="field"><span class="label">Занятость:</span><span class="value"> частичная, совмещенная с учебой</span></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title"><i class="fas fa-user-circle"></i>Личная информация</div>
+        <div class="field"><span class="label">Гражданство:</span><span class="value"> Российская Федерация</span></div>
+        <div class="field"><span class="label">Образование:</span><span class="value"> неполное высшее</span></div>
+        <div class="field"><span class="label">Дата рождения:</span><span class="value"> 07.07.2007 г.</span></div>
+        <div class="field"><span class="label">Пол:</span><span class="value"> мужской</span></div>
+        <div class="field"><span class="label">Семейное положение:</span><span class="value"> холост</span></div>
+      </div>
+
+      <div class="card education">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i>Образование</div>
+        <p class="field"><span class="label">Вуз:</span><span class="value"> РТУ МИРЭА, г. Москва</span></p>
+        <p class="field"><span class="label">Факультет:</span><span class="value"> Институт Искусственного Интеллекта</span></p>
+        <p class="field"><span class="label">Специальность:</span><span class="value"> 09.03.01</span></p>
+        <p class="field"><span class="label">Дата окончания:</span><span class="value"> 2029 г.</span></p>
+        <p class="field"><span class="label">Форма обучения:</span><span class="value"> очная</span></p>
+        <p class="field"><span class="label">Доп. образование:</span><span class="value"> профессия рабочего - паяльщик 2 разряда</span></p>
+      </div>
+
+      <div class="card work">
+        <div class="section-title"><i class="fas fa-briefcase"></i>Опыт работы</div>
+        <p class="field"><span class="label">Должность:</span><span class="value"> самозанятый</span></p>
+        <p class="field"><span class="label">Период работы:</span><span class="value"> с 18 апреля 2023 года по настоящее время</span></p>
+
+        <div style="margin-top:10px">
+          <p class="field"><span class="label">Подробно:</span></p>
+          <p class="field"><span class="value">  Веб-разработка для промышленности: разработал сайт для производства штамповки, что позволило систематизировать и упростить процессы взаимодействия с клиентами, а также повысить эффективность работы предприятия.</span></p>
+
+          <p class="field"><span class="value">  Проект «Умный город» (г. Томск): участвовал в создании и программировании модели «Умного города». Помимо архитектуры проекта и разработки алгоритмов управления, реализовал интеграцию с сервером, что позволило улучшить процессы городского благоустройства.</span></p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
