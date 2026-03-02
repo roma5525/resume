@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Резюме — Шероченков Роман Артурович</title>
-  <!-- Подключаем Font Awesome -->
+  <title>Резюме: Шероченков Роман Артурович</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
   <style>
     :root{--blue:#0b63a8;--light:#ffffff;--text:#1b2430}
     *{box-sizing:border-box}
@@ -25,7 +23,8 @@
       overflow:hidden;
       display:grid;
       grid-template-columns:320px 1fr;
-      box-shadow:0 10px 30px rgba(11,99,168,0.12)
+      box-shadow:0 10px 30px rgba(11,99,168,0.12);
+      align-items: start;
     }
     .sidebar{
       background:linear-gradient(180deg,var(--blue),#0f74bf);
@@ -33,12 +32,13 @@
       color:white;
       display:flex;
       flex-direction:column;
-      gap:22px
+      gap:22px;
+      align-self: start;
+      border-radius:14px 0 0 14px;
     }
     .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.12);align-self:center}
     .name{font-size:20px;font-weight:700;text-align:center;margin-top:6px}
-    
-    /* Новый стиль цитаты */
+
     .quote{
       position:relative;
       font-size:15px;
@@ -49,7 +49,7 @@
       font-style:italic;
     }
     .quote::before{
-      content:"“";
+      content:"\201C";
       font-size:42px;
       position:absolute;
       top:-12px;
@@ -57,7 +57,7 @@
       opacity:0.5;
     }
     .quote::after{
-      content:"”";
+      content:"\201D";
       font-size:42px;
       position:absolute;
       bottom:-22px;
@@ -79,8 +79,7 @@
 
     .content{padding:32px}
     .card{background:white;padding:14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);margin-bottom:18px}
-    
-    /* Унифицированный стиль для всех текстовых пунктов */
+
     .field,
     .card p {
       font-size:15px;
@@ -92,81 +91,325 @@
     h2{margin:0 0 12px 0;font-size:18px}
     .label{font-weight:700;color:#34495e}
     .value{margin-left:6px}
-    .education, .work{margin-top:12px}
 
-    @media (max-width:880px){
-      .container{grid-template-columns:1fr;max-width:760px}
-      .sidebar{flex-direction:row;align-items:center;gap:12px;padding:18px}
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:10px;
+    }
+    .tag{
+      background:#eef4fb;
+      color:#0b63a8;
+      border:1px solid #c3dcf5;
+      border-radius:4px;
+      font-size:12px;
+      padding:3px 8px;
+      font-weight:500;
+    }
+
+    .sub-project{
+      border-left:3px solid #c3dcf5;
+      padding-left:12px;
+      margin-top:14px;
+    }
+    .sub-project-title{
+      font-weight:700;
+      font-size:15px;
+      color:#0b63a8;
+      margin-bottom:4px;
+    }
+    .sub-project-meta{
+      font-size:13px;
+      color:#6b7a8d;
+      margin-bottom:6px;
+    }
+
+      .container{grid-template-columns:1fr;max-width:95%}
+      .sidebar{flex-direction:row;align-items:center;gap:12px;padding:18px;border-radius:14px 14px 0 0}
       .photo{width:84px;height:84px}
       .content{padding:18px}
-      .quote{font-size:14px;padding:16px}
-    }
+      .quote{font-size:14px;padding:30px}
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <div style="display:flex;flex-direction:column;align-items:center">
-        <div class="photo">
-          <img src="photo.png" alt="Фото" style="width:100%;height:100%;object-fit:cover;display:block" />
+<div class="container">
+  <aside class="sidebar">
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div class="photo">
+        <img src="photo.png" alt="Фото" style="width:100%;height:100%;object-fit:cover;display:block" />
+      </div>
+      <div class="name">Шероченков<br>Роман Артурович</div>
+    </div>
+
+    <div class="quote">
+      Имею практический опыт полного цикла разработки: от схемотехники и пайки до создания сервера и написания прошивки и документации по ГОСТ. Заинтересован в развитии в embedded-разработке и промышленной автоматизации. Готов отдавать приоритет работе, совмещая с учёбой.
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-id-card"></i>Основная информация</div>
+      <div class="field"><span class="label">Занимаемая должность:</span><span class="value">студент РТУ МИРЭА (09.03.01, 1 курс)</span></div>
+      <div class="field"><span class="label">Желаемая должность:</span><span class="value">embedded-разработчик / инженер АСУ</span></div>
+      <div class="field"><span class="label">Желаемая зарплата:</span><span class="value">договорная</span></div>
+      <div class="field"><span class="label">Занятость:</span><span class="value">неполная (приоритет работе), совмещённая с учёбой</span></div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-user-circle"></i>Личная информация</div>
+      <div class="field"><span class="label">Гражданство:</span><span class="value">Российская Федерация</span></div>
+      <div class="field"><span class="label">Образование:</span><span class="value">неполное высшее</span></div>
+      <div class="field"><span class="label">Дата рождения:</span><span class="value">07.07.2007 г.</span></div>
+      <div class="field"><span class="label">Пол:</span><span class="value">мужской</span></div>
+      <div class="field"><span class="label">Семейное положение:</span><span class="value">холост</span></div>
+      <div class="field"><span class="label">Английский язык:</span><span class="value">advanced - технические тексты, диалог на любые темы</span></div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-graduation-cap"></i>Образование</div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">РТУ МИРЭА, г. Москва</div>
+        <div class="sub-project-meta">09.03.01 · Киберфизические системы · Институт Искусственного Интеллекта · 2024-2029 · Очная</div>
+        <p class="field"><span>Проектирование в КОМПАС-3D.</span><br><span>Программирование промышленных контроллеров в B&amp;R Automation Studio</span></p>
+      </div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">ДЮТТ, г. Челябинск</div>
+        <div class="sub-project-meta">Профессия 16464 · 250 ак. часов · Итоговый экзамен: отлично · Удостоверение № 3324745068607</div>
+        <p class="field"><span>Паяльщик радиодеталей, 2 разряд</span></p>
+      </div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">Код будущего</div>
+        <div class="sub-project-meta">148 ак. часов · Сертификат № 015-I-07859</div>
+        <p class="field"><span>Разработка 2D-игр на Python, C#</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-briefcase"></i>Опыт работы</div>
+      <div class="field"><span class="label">Должность:</span><span class="value">самозанятый</span></div>
+      <div class="field"><span class="label">Период работы:</span><span class="value">с 18 апреля 2023 года по настоящее время</span></div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">Программно-аппаратный комплекс мониторинга соответствия<br>микроклимата в помещении нормам СанПиН, г. Москва</div>
+        <div class="sub-project-meta">Квалификационный проект · НТЦ Вулкан · 2026</div>
+        <p class="field"><span>Разработал двухузловую систему на базе STM32 Nucleo F746ZG. Узел-отправитель считывает данные с датчика BME280 (температура, влажность, давление) по SPI и передаёт их через WiFi-модуль ESP8266-01 по протоколу TCP (AT-команды, UART). Узел-получатель выводит показатели в реальном времени на светодиодную матрицу WS2812B 8x8, управляемую таймером TIM3. Составил полную техническую документацию по ГОСТ 19.101-77, ГОСТ 2.105-2019.</span></p>
+        <div class="tags">
+          <span class="tag">STM32 Nucleo F746ZG</span>
+          <span class="tag">ESP8266-01</span>
+          <span class="tag">BME280</span>
+          <span class="tag">WS2812B</span>
+          <span class="tag">I²C</span>
+          <span class="tag">SPI</span>
+          <span class="tag">UART</span>
+          <span class="tag">TCP/IP</span>
+          <span class="tag">C (STM32 HAL)</span>
+          <span class="tag">AT-команды</span>
+          <span class="tag">WiFi</span>
+          <span class="tag">ГОСТ 19.101-77</span>
+          <span class="tag">ГОСТ 2.105-2019</span>
         </div>
-        <div class="name">Шероченков<br>Роман Артурович</div>
       </div>
 
-      <div class="quote">
-        Я имею практический опыт разработки и внедрения цифровых решений для промышленности и городских инфраструктур.  
-
-        Моя цель — разрабатывать и внедрять IT-решения на стыке промышленности, городской инфраструктуры и искусственного интеллекта, создавая проекты, которые приносят пользу бизнесу и обществу.
-      </div>
-    </aside>
-
-    <main class="content">
-      <div class="card">
-        <div class="section-title"><i class="fas fa-id-card"></i>Основная информация</div>
-        <div class="field"><span class="label">Занимаемая должность:</span><span class="value"> студент РТУ МИРЭА (09.03.01, 1 курс)</span></div>
-        <div class="field"><span class="label">Желаемая должность:</span><span class="value"> специалист по встроенным системам (Embedded-разработчик)</span></div>
-        <div class="field"><span class="label">Желаемая зарплата:</span><span class="value"> договорная</span></div>
-        <div class="field"><span class="label">Занятость:</span><span class="value"> частичная, совмещенная с учебой</span></div>
-      </div>
-
-      <div class="card">
-        <div class="section-title"><i class="fas fa-user-circle"></i>Личная информация</div>
-        <div class="field"><span class="label">Гражданство:</span><span class="value"> Российская Федерация</span></div>
-        <div class="field"><span class="label">Образование:</span><span class="value"> неполное высшее</span></div>
-        <div class="field"><span class="label">Дата рождения:</span><span class="value"> 07.07.2007 г.</span></div>
-        <div class="field"><span class="label">Пол:</span><span class="value"> мужской</span></div>
-        <div class="field"><span class="label">Семейное положение:</span><span class="value"> холост</span></div>
-      </div>
-
-      <div class="card education">
-        <div class="section-title"><i class="fas fa-graduation-cap"></i>Образование</div>
-        <p class="field"><span class="label">Вуз:</span><span class="value"> РТУ МИРЭА, г. Москва</span></p>
-        <p class="field"><span class="label">Факультет:</span><span class="value"> Институт Искусственного Интеллекта</span></p>
-        <p class="field"><span class="label">Специальность:</span><span class="value"> 09.03.01 (Киберфизические системы)</span></p>
-        <p class="field"><span class="label">Дата окончания:</span><span class="value"> 2029 г.</span></p>
-        <p class="field"><span class="label">Форма обучения:</span><span class="value"> очная</span></p>
-        <p class="field"><span class="label">Доп. образование:</span><span class="value"> профессия рабочего - паяльщик 2 разряда</span></p>
-      </div>
-
-      <div class="card work">
-        <div class="section-title"><i class="fas fa-briefcase"></i>Опыт работы</div>
-        <p class="field"><span class="label">Должность:</span><span class="value"> самозанятый</span></p>
-        <p class="field"><span class="label">Период работы:</span><span class="value"> с 18 апреля 2023 года по настоящее время</span></p>
-
-        <div style="margin-top:10px">
-          <p class="field"><span class="label">Подробно:</span></p>
-          <p class="field"><span class="value">&nbsp&nbsp&nbsp&nbspВеб-разработка для промышленности: разработал сайт для производства штамповки, что позволило систематизировать и упростить процессы взаимодействия с клиентами, а также повысить эффективность работы предприятия.</span></p>
-
-          <p class="field"><span class="value">&nbsp&nbsp&nbsp&nbspПроект «Умный город» (г. Томск): участвовал в создании и программировании модели «Умного города». Помимо архитектуры проекта и разработки алгоритмов управления, реализовал интеграцию с сервером, что позволило улучшить процессы городского благоустройства. Проект был осуществлен в рамках Национальной Технологической Олимпиады.</span></p>
+      <div class="sub-project">
+        <div class="sub-project-title">НТО «Умный город» - финал, г. Томск</div>
+        <div class="sub-project-meta">Национальная технологическая олимпиада · Командный проект · 2025</div>
+        <p class="field"><span>Собрал и запрограммировал 5 IoT-узлов микрорайона: умный светофор (адресная лента WS2812B, датчики CO2/ЛОС MGS-CO30, температуры/давления THP80, два датчика расстояния MGS-D20 для подсчёта трафика в машинах/мин.), умные фонари (автовключение по датчику MGS-L75), умную парковку (датчик расстояния, протечки, пламени, расчёт уровня заряда электрокара), ж/д шлагбаум (сервопривод MG90S, синхронизация по расписанию с городским сервером, учёт индекса задержки поезда с соседнего переезда). Разработал локальный HTTP-сервер: сбор данных, рекомендации жителям. Интеграция с городским сервером: бронирование парковки, управление яркостью фонарей, передача индексов загрязнения.</span></p>
+        <div class="tags">
+          <span class="tag">ESP32</span>
+          <span class="tag">Arduino IDE</span>
+          <span class="tag">C++</span>
+          <span class="tag">WS2812B</span>
+          <span class="tag">MG90S</span>
+          <span class="tag">MGS-CO30</span>
+          <span class="tag">THP80</span>
+          <span class="tag">MGS-D20</span>
+          <span class="tag">MGS-L75</span>
+          <span class="tag">HTTP REST</span>
+          <span class="tag">WiFi 2.4 ГГц</span>
+          <span class="tag">Telegram Bot API</span>
+          <span class="tag">Python (сервер)</span>
+          <span class="tag">IoT</span>
         </div>
       </div>
 
-    </main>
-  </div>
+      <div class="sub-project">
+        <div class="sub-project-title">НТО «Система беспроводного питания для сенсорных устройств» - финал, г. Зеленоград</div>
+        <div class="sub-project-meta">Национальная технологическая олимпиада · Командный проект · 2025</div>
+        <p class="field"><span>Разработал и собрал многомодульную аналоговую систему для имитации беспроводной передачи энергии. Реализовал три генератора синусоидального сигнала (250 Гц / 1.5 кГц / 4 кГц) на микроконтроллерах ATtiny85 на сдвиговых регистрах 74HC595. Собрал аналоговый сумматор на ОУ LM358, рассчитал и собрал полосовой фильтр для выделения целевой частоты, реализовал выпрямитель на диодном мосту со сглаживающим конденсатором. Разработал программный анализатор сигнала на Arduino UNO с визуализацией АЧХ до и после фильтрации, выводом коэффициента пульсации, тока, напряжения и мгновенной мощности. Схемы выполнены в EasyEDA, разработка велась с контролем версий Git.</span></p>
+        <div class="tags">
+          <span class="tag">ATtiny85</span>
+          <span class="tag">Arduino UNO</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">74HC595</span>
+          <span class="tag">LM358 (ОУ)</span>
+          <span class="tag">R-2R ЦАП</span>
+          <span class="tag">Полосовой фильтр</span>
+          <span class="tag">Диодный мост</span>
+          <span class="tag">БПФ / АЧХ</span>
+          <span class="tag">EasyEDA</span>
+          <span class="tag">C (Arduino)</span>
+          <span class="tag">Git</span>
+          <span class="tag">Осциллограф</span>
+        </div>
+      </div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">Автоматизированная система выращивания растений, г. Тюмень</div>
+        <div class="sub-project-meta">Командный проект · 2025</div>
+        <p class="field"><span>Спроектировал и собрал корпус, обшил светоизолирующей тканью. Нарезал трубки капельного полива, смонтировал насос и фитосветильники, подключил через реле к микроконтроллеру. Написал программу автополива и автосвета по расписанию. Результатом стало повышение эффективности урожая в пересчете на площадь посевов.</span></p>
+        <div class="tags">
+          <span class="tag">Arduino</span>
+          <span class="tag">C++</span>
+          <span class="tag">Реле</span>
+          <span class="tag">Насос</span>
+          <span class="tag">Фитолампа</span>
+          <span class="tag">Капельный полив</span>
+        </div>
+      </div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">НТО «Технологическое мейкерство» - финал, г. Санкт-Петербург</div>
+        <div class="sub-project-meta">Национальная технологическая олимпиада · Командный проект · 2024</div>
+        <p class="field"><span>Разработал спектрофотометр в рамках командного инженерного тура НТО. Реализовал измерение оптической плотности раствора по закону Бугера-Ламберта-Беера: источник излучения, фотодиод в качестве детектора, АЦП для оцифровки сигнала, обработка данных и визуализация спектра на Arduino. Вместе с командой разработали программу для станка по созданию печатных плат. После печати распаивал компоненты. По завершении получил рабочий спектрофотометр, осуществляющий сбор данных концентрации различных кислот. Исследования охватывали методы спектрофотометрии и фотоколориметрии.</span></p>
+        <div class="tags">
+          <span class="tag">Спектрофотометрия</span>
+          <span class="tag">UV-Vis</span>
+          <span class="tag">Фотоколориметрия</span>
+          <span class="tag">Закон Бугера-Ламберта-Беера</span>
+          <span class="tag">Фотодиод</span>
+          <span class="tag">АЦП</span>
+          <span class="tag">Python</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">Калибровочный график</span>
+          <span class="tag">Оптический анализ</span>
+        </div>
+      </div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">ИКаР «ТЕХНО» - робот-экскурсовод с распознаванием лиц, г. Челябинск</div>
+        <div class="sub-project-meta">Всероссийский профориентационный конкурс «Инженерные кадры России» · Командный проект · 2024</div>
+        <p class="field"><span>Вместе с командой разработали робота-экскурсовода на базе Raspberry Pi с нейросетью для идентификации посетителей по лицу. Система распознаёт ранее зарегистрированных людей и адаптирует экскурсионный маршрут и контент под конкретного посетителя. Реализована в рамках кейса реального предприятия в соответствии с требованиями конкурса.</span></p>
+        <div class="tags">
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Face Recognition</span>
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Linux (ARM)</span>
+          <span class="tag">Нейросети</span>
+        </div>
+      </div>
+
+      
+            <div class="sub-project">
+        <div class="sub-project-title">IT-инфраструктура и автоматизация промышленного предприятия, г. Миасс</div>
+        <div class="sub-project-meta">Самозанятый · 2023 - настоящее время</div>
+        <p class="field"><span>Самостоятельно провёл интернет на производственный объект за городом: выбор провайдера, прокладка кабеля, настройка маршрутизатора. Развернул систему IP-видеонаблюдения с нуля: подбор и закупка оборудования (IP-камеры, регистратор), настройка удалённого доступа через Ethernet протокол - просмотр доступен из любой точки мира. Реализовал систему умного питания для цехового оборудования: автоматическое включение и выключение оборудования для просушки после фосфатирования деталей по расписанию, аварийное отключение при перенапряжении. Самостоятельно подобрал комплектующие, собрал и ввёл в эксплуатацию несколько ПК, установил и настроил операционные системы.</span></p>
+        <div class="tags">
+          <span class="tag">IP-видеонаблюдение</span>
+          <span class="tag">NVR</span>
+          <span class="tag">DDNS</span>
+          <span class="tag">Проброс портов</span>
+          <span class="tag">Маршрутизатор</span>
+          <span class="tag">Ethernet / прокладка кабеля</span>
+          <span class="tag">Умное питание</span>
+          <span class="tag">Реле / автоматика</span>
+          <span class="tag">Защита от перенапряжения</span>
+          <span class="tag">Сборка ПК</span>
+          <span class="tag">Windows</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Администрирование ОС</span>
+        </div>
+      </div>
+
+      <div class="sub-project">
+        <div class="sub-project-title">Корпоративный сайт для производства, г. Челябинск</div>
+        <div class="sub-project-meta">Самозанятый · 2023 - настоящее время · <a href="https://miass-shtampovka.ru" target="_blank">miass-shtampovka.ru</a></div>
+        <p class="field"><span>Разработал сайт с нуля для промышленного производства (штамповка металла). Самостоятельно арендовал и настроил VPS-сервер, провёл SEO-индексацию через Яндекс.Вебмастер и Google Search Console.</span></p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">VPS / Linux</span>
+          <span class="tag">SEO</span>
+          <span class="tag">Яндекс.Вебмастер</span>
+          <span class="tag">Google Search Console</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-tools"></i>Навыки и стек</div>
+
+      <p class="field"><span class="label">Микроконтроллеры и железо:</span></p>
+      <div class="tags">
+        <span class="tag">STM32</span>
+        <span class="tag">ESP32</span>
+        <span class="tag">ESP8266-01</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">ATtiny85</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">Датчики</span>
+        <span class="tag">Светодиоды</span>
+        <span class="tag">Приводы</span>
+        <span class="tag">I2C / UART / SPI</span>
+        <span class="tag">Паяльщик радиодеталей, 2 разряд</span>
+      </div>
+
+      <p class="field" style="margin-top:12px"><span class="label">Языки программирования:</span></p>
+      <div class="tags">
+        <span class="tag">C / C++</span>
+        <span class="tag">Python</span>
+        <span class="tag">C#</span>
+        <span class="tag">HTML / CSS / JS</span>
+        <span class="tag">PHP</span>
+      </div>
+
+      <p class="field" style="margin-top:12px"><span class="label">Инструменты и среды разработки:</span></p>
+      <div class="tags">
+        <span class="tag">Arduino IDE</span>
+        <span class="tag">B&amp;R Automation Studio</span>
+        <span class="tag">КОМПАС-3D</span>
+        <span class="tag">Unity</span>
+        <span class="tag">Fritzing / EasyEDA</span>
+        <span class="tag">Git</span>
+        <span class="tag">Linux</span>
+        <span class="tag">IoT</span>
+        <span class="tag">SEO</span>
+      </div>
+
+      <p class="field" style="margin-top:12px"><span class="label">Сети и IT-инфраструктура:</span></p>
+      <div class="tags">
+        <span class="tag">TCP/IP</span>
+        <span class="tag">HTTP REST</span>
+        <span class="tag">WiFi</span>
+        <span class="tag">Ethernet</span>
+      </div>
+
+      <p class="field" style="margin-top:12px"><span class="label">Системное администрирование и железо ПК:</span></p>
+      <div class="tags">
+        <span class="tag">Сборка ПК</span>
+        <span class="tag">Подбор комплектующих</span>
+        <span class="tag">Установка Windows / Linux</span>
+        <span class="tag">Администрирование ОС</span>
+        <span class="tag">BIOS / UEFI</span>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-user-check"></i>Дополнительно</div>
+      <p class="field">Умею читать и составлять техническую документацию по ГОСТ: схемы электрические принципиальные, ТЗ, пояснительные записки. Уверенно работаю с измерительным оборудованием: мультиметр, различные анализаторы. Настраиваю сетевое оборудование: маршрутизаторы, точки доступа, IP-камеры. Быстро осваиваю новые инструменты и технологии - всё, что перечислено в резюме, изучено самостоятельно параллельно с учёбой. Ответственно отношусь к срокам и качеству работы, умею работать в команде и брать на себя инициативу там, где это нужно. Активно применяю инструменты на базе больших языковых моделей в рабочем процессе: генерация и ревью кода, работа с документацией, анализ даташитов. Это сокращает время на рутинные задачи и позволяет сосредоточиться на архитектурных и инженерных решениях.</p>
+    </div>
+
+  </main>
+</div>
 </body>
 </html>
-
-
-
-
-
